@@ -1,14 +1,21 @@
-# Archivos temporales de macOS / Windows
-.DS_Store
+# Archivos temporales de Windows
 Thumbs.db
 Desktop.ini
 
 # Archivos temporales de Excel
 ~$*.xlsx
-~$Control stock 2026.xlsx
 
-# Entornos y caché (en caso de que luego agregues Python u otro backend)
+# Archivos de caché de Python
 __pycache__/
-venv/
-env/
-.env
+
+# ==========================================
+# CARPETAS PRIVADAS / DOCUMENTOS DE NEGOCIO
+# (Excluidas de GitHub por privacidad y peso)
+# ==========================================
+CERTIFICADOS_FACOIMPEC_2025_2026/
+cotizaciones/
+documentos_old/
+PROYECCIONES/
+Registros sanitarios/
+validación/
+Validación 2026/
