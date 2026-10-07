@@ -1,0 +1,716 @@
+{
+  "leche": [
+    {
+      "mun": "Agua Blanca",
+      "mes": "Octubre",
+      "fecha": "28/08/2026",
+      "latas": 640,
+      "cajas": 13,
+      "unidades": 16,
+      "f_entrega": "4/09/2026"
+    },
+    {
+      "mun": "Agua Blanca",
+      "mes": "Setiembre",
+      "fecha": "28/08/2026",
+      "latas": 640,
+      "cajas": 13,
+      "unidades": 16,
+      "f_entrega": "4/09/2026"
+    },
+    {
+      "mun": "Alto Trujillo",
+      "mes": "Setiembre",
+      "fecha": "31/08/2026",
+      "latas": 4680,
+      "cajas": 97,
+      "unidades": 24,
+      "f_entrega": "1/09/2026"
+    },
+    {
+      "mun": "Alto Trujillo",
+      "mes": "Octubre",
+      "fecha": "30/09/2026",
+      "latas": 4680,
+      "cajas": 97,
+      "unidades": 24,
+      "f_entrega": "25/09/2026"
+    },
+    {
+      "mun": "Ascope",
+      "mes": "Oct/Nov/Dic",
+      "fecha": "15/09/2026",
+      "latas": 2400,
+      "cajas": 50,
+      "unidades": 0,
+      "f_entrega": "18/09/2026"
+    },
+    {
+      "mun": "Caceres",
+      "mes": "Setiembre",
+      "fecha": "27/08/2026",
+      "latas": 1710,
+      "cajas": 35,
+      "unidades": 30,
+      "f_entrega": "1/09/2026"
+    },
+    {
+      "mun": "Caceres",
+      "mes": "Octubre",
+      "fecha": "27/08/2026",
+      "latas": 1710,
+      "cajas": 35,
+      "unidades": 30,
+      "f_entrega": "1/09/2026"
+    },
+    {
+      "mun": "Cajatambo",
+      "mes": "O.C.",
+      "fecha": "15/09/2026",
+      "latas": 840,
+      "cajas": 17,
+      "unidades": 24,
+      "f_entrega": "14/09/2026"
+    },
+    {
+      "mun": "Cajatambo",
+      "mes": "Diciembre",
+      "fecha": "15/09/2026",
+      "latas": 660,
+      "cajas": 13,
+      "unidades": 36,
+      "f_entrega": "14/09/2026"
+    },
+    {
+      "mun": "Cajatambo",
+      "mes": "Noviembre",
+      "fecha": "15/09/2026",
+      "latas": 660,
+      "cajas": 13,
+      "unidades": 36,
+      "f_entrega": "14/09/2026"
+    },
+    {
+      "mun": "Cajatambo",
+      "mes": "Octubre",
+      "fecha": "15/09/2026",
+      "latas": 660,
+      "cajas": 13,
+      "unidades": 36,
+      "f_entrega": "14/09/2026"
+    },
+    {
+      "mun": "Casa Grande",
+      "mes": "Octubre",
+      "fecha": "5/09/2026",
+      "latas": 3381,
+      "cajas": 70,
+      "unidades": 21,
+      "f_entrega": "29/09/2026"
+    },
+    {
+      "mun": "Chancay",
+      "mes": "O.C.",
+      "fecha": "20/09/2026",
+      "latas": 4368,
+      "cajas": 91,
+      "unidades": 0,
+      "f_entrega": "15/09/2026"
+    },
+    {
+      "mun": "Chongoyape",
+      "mes": "O.C.",
+      "fecha": "24/08/2026",
+      "latas": 2475,
+      "cajas": 51,
+      "unidades": 27,
+      "f_entrega": "1/09/2026"
+    },
+    {
+      "mun": "Chongoyape",
+      "mes": "Setiembre",
+      "fecha": "24/08/2026",
+      "latas": 2200,
+      "cajas": 45,
+      "unidades": 40,
+      "f_entrega": "1/09/2026"
+    },
+    {
+      "mun": "Coris",
+      "mes": "O.C.",
+      "fecha": "30/09/2026",
+      "latas": 3312,
+      "cajas": 69,
+      "unidades": 0,
+      "f_entrega": "29/09/2026"
+    },
+    {
+      "mun": "Eten",
+      "mes": "Setiembre",
+      "fecha": "28/08/2026",
+      "latas": 1558,
+      "cajas": 32,
+      "unidades": 22,
+      "f_entrega": "1/09/2026"
+    },
+    {
+      "mun": "Eten",
+      "mes": "Octubre",
+      "fecha": "29/09/2026",
+      "latas": 1558,
+      "cajas": 32,
+      "unidades": 22,
+      "f_entrega": "15/09/2026"
+    },
+    {
+      "mun": "Florencia de Mora",
+      "mes": "Setiembre",
+      "fecha": "28/08/2026",
+      "latas": 3771,
+      "cajas": 78,
+      "unidades": 27,
+      "f_entrega": "1/09/2026"
+    },
+    {
+      "mun": "Huamachuco",
+      "mes": "Octubre",
+      "fecha": "25/09/2026",
+      "latas": 10470,
+      "cajas": 218,
+      "unidades": 6,
+      "f_entrega": "24/09/2026"
+    },
+    {
+      "mun": "Huambo",
+      "mes": "Octubre",
+      "fecha": "26/08/2026",
+      "latas": 2568,
+      "cajas": 53,
+      "unidades": 24,
+      "f_entrega": "1/09/2026"
+    },
+    {
+      "mun": "Huaranchal",
+      "mes": "Diciembre",
+      "fecha": "15/09/2026",
+      "latas": 888,
+      "cajas": 18,
+      "unidades": 24,
+      "f_entrega": "21/09/2026"
+    },
+    {
+      "mun": "Huaranchal",
+      "mes": "Noviembre",
+      "fecha": "15/09/2026",
+      "latas": 888,
+      "cajas": 18,
+      "unidades": 24,
+      "f_entrega": "21/09/2026"
+    },
+    {
+      "mun": "Huaranchal",
+      "mes": "Octubre",
+      "fecha": "15/09/2026",
+      "latas": 888,
+      "cajas": 18,
+      "unidades": 24,
+      "f_entrega": "21/09/2026"
+    },
+    {
+      "mun": "Jose Leonardo Ortiz",
+      "mes": "Setiembre",
+      "fecha": "16/09/2026",
+      "latas": 17585,
+      "cajas": 366,
+      "unidades": 17,
+      "f_entrega": "15/09/2026"
+    },
+    {
+      "mun": "Jose Manuel Quiroz",
+      "mes": "O.C.",
+      "fecha": "24/08/2026",
+      "latas": 1140,
+      "cajas": 23,
+      "unidades": 36,
+      "f_entrega": "6/09/2026"
+    },
+    {
+      "mun": "Jose Manuel Quiroz",
+      "mes": "Octubre",
+      "fecha": "24/08/2026",
+      "latas": 1140,
+      "cajas": 23,
+      "unidades": 36,
+      "f_entrega": "6/09/2026"
+    },
+    {
+      "mun": "Jose Manuel Quiroz",
+      "mes": "Setiembre",
+      "fecha": "24/08/2026",
+      "latas": 1140,
+      "cajas": 23,
+      "unidades": 36,
+      "f_entrega": "6/09/2026"
+    },
+    {
+      "mun": "La Banda de Shilcayo",
+      "mes": "Octubre",
+      "fecha": "19/09/2026",
+      "latas": 2230,
+      "cajas": 46,
+      "unidades": 22,
+      "f_entrega": "8/09/2026"
+    },
+    {
+      "mun": "La Florida",
+      "mes": "Oct/Nov/Dic",
+      "fecha": "15/09/2026",
+      "latas": 1980,
+      "cajas": 41,
+      "unidades": 12,
+      "f_entrega": "11/09/2026"
+    }
+  ],
+  "cereal": [
+    {
+      "mun": "Alto Trujillo",
+      "mes": "Octubre",
+      "fecha": "30/09/2026",
+      "bolsas": 3120,
+      "kg_bolsa": 0.951,
+      "total_kg": 2968.56,
+      "cap_saco": 40,
+      "n_sacos": 78,
+      "unidades": 0
+    },
+    {
+      "mun": "Ascope",
+      "mes": "Octubre / Noviembre / Diciembre",
+      "fecha": "15/09/2026",
+      "bolsas": 2400,
+      "kg_bolsa": 0.778,
+      "total_kg": 1867.2,
+      "cap_saco": 60,
+      "n_sacos": 40,
+      "unidades": 0
+    },
+    {
+      "mun": "Cachachi",
+      "mes": "Octubre",
+      "fecha": "25/09/2026",
+      "bolsas": 6500,
+      "kg_bolsa": 0.8,
+      "total_kg": 5200,
+      "cap_saco": 50,
+      "n_sacos": 130,
+      "unidades": 0
+    },
+    {
+      "mun": "Cajabamba",
+      "mes": "Octubre",
+      "fecha": "14/09/2026",
+      "bolsas": 1012.9,
+      "kg_bolsa": 1,
+      "total_kg": 1012.86,
+      "cap_saco": 40,
+      "n_sacos": 25,
+      "unidades": 12.9
+    },
+    {
+      "mun": "Cajabamba",
+      "mes": "Noviembre",
+      "fecha": "14/09/2026",
+      "bolsas": 980.2,
+      "kg_bolsa": 1,
+      "total_kg": 980.18,
+      "cap_saco": 40,
+      "n_sacos": 24,
+      "unidades": 20.2
+    },
+    {
+      "mun": "Cajabamba Leche",
+      "mes": "Octubre",
+      "fecha": "14/09/2026",
+      "bolsas": 3269.8,
+      "kg_bolsa": 1,
+      "total_kg": 3269.81,
+      "cap_saco": 40,
+      "n_sacos": 81,
+      "unidades": 29.8
+    },
+    {
+      "mun": "Cajabamba Leche",
+      "mes": "Noviembre",
+      "fecha": "14/09/2026",
+      "bolsas": 3164.3,
+      "kg_bolsa": 1,
+      "total_kg": 3164.33,
+      "cap_saco": 40,
+      "n_sacos": 79,
+      "unidades": 4.3
+    },
+    {
+      "mun": "Cajamarca Rur",
+      "mes": "Septiembre",
+      "fecha": "01/09/2026",
+      "bolsas": 4455,
+      "kg_bolsa": 2.4,
+      "total_kg": 10692,
+      "cap_saco": 18,
+      "n_sacos": 247,
+      "unidades": 9
+    },
+    {
+      "mun": "Cajamarca Rur",
+      "mes": "Octubre",
+      "fecha": "01/09/2026",
+      "bolsas": 4455,
+      "kg_bolsa": 2.48,
+      "total_kg": 11048.4,
+      "cap_saco": 18,
+      "n_sacos": 247,
+      "unidades": 9
+    },
+    {
+      "mun": "Cajamarca Urb",
+      "mes": "Setiembre",
+      "fecha": "01/09/2026",
+      "bolsas": 2500,
+      "kg_bolsa": 1.816,
+      "total_kg": 4540.5,
+      "cap_saco": 25,
+      "n_sacos": 100,
+      "unidades": 0
+    },
+    {
+      "mun": "Cajamarca Urb",
+      "mes": "Octubre",
+      "fecha": "01/09/2026",
+      "bolsas": 2500,
+      "kg_bolsa": 1.877,
+      "total_kg": 4691.85,
+      "cap_saco": 25,
+      "n_sacos": 100,
+      "unidades": 0
+    },
+    {
+      "mun": "Cajatambo",
+      "mes": "O.C.",
+      "fecha": "11/09/2026",
+      "bolsas": 840,
+      "kg_bolsa": 0.5,
+      "total_kg": 420,
+      "cap_saco": 80,
+      "n_sacos": 10,
+      "unidades": 40
+    },
+    {
+      "mun": "Cajatambo",
+      "mes": "Octubre",
+      "fecha": "15/09/2026",
+      "bolsas": 660,
+      "kg_bolsa": 0.5,
+      "total_kg": 330,
+      "cap_saco": 80,
+      "n_sacos": 8,
+      "unidades": 20
+    },
+    {
+      "mun": "Cajatambo",
+      "mes": "Noviembre",
+      "fecha": "15/09/2026",
+      "bolsas": 660,
+      "kg_bolsa": 0.5,
+      "total_kg": 330,
+      "cap_saco": 80,
+      "n_sacos": 8,
+      "unidades": 20
+    },
+    {
+      "mun": "Cajatambo",
+      "mes": "Diciembre",
+      "fecha": "15/09/2026",
+      "bolsas": 660,
+      "kg_bolsa": 0.5,
+      "total_kg": 330,
+      "cap_saco": 80,
+      "n_sacos": 8,
+      "unidades": 20
+    },
+    {
+      "mun": "Carabamba1",
+      "mes": "Octubre",
+      "fecha": "21/09/2026",
+      "bolsas": 1880,
+      "kg_bolsa": 0.855,
+      "total_kg": 1606.85,
+      "cap_saco": 50,
+      "n_sacos": 37,
+      "unidades": 30
+    },
+    {
+      "mun": "Casa Grande",
+      "mes": "Octubre",
+      "fecha": "05/09/2026",
+      "bolsas": 1127,
+      "kg_bolsa": 1.355,
+      "total_kg": 1527.57,
+      "cap_saco": 30,
+      "n_sacos": 37,
+      "unidades": 17
+    },
+    {
+      "mun": "Catilluc",
+      "mes": "Julio / Agosto / Septiembre",
+      "fecha": "30/06/2026",
+      "bolsas": 2746,
+      "kg_bolsa": 1.044,
+      "total_kg": 2866.82,
+      "cap_saco": 40,
+      "n_sacos": 68,
+      "unidades": 26
+    },
+    {
+      "mun": "Catilluc",
+      "mes": "O.C.",
+      "fecha": "31/07/2026",
+      "bolsas": 1076,
+      "kg_bolsa": 1.044,
+      "total_kg": 1123.34,
+      "cap_saco": 40,
+      "n_sacos": 26,
+      "unidades": 36
+    },
+    {
+      "mun": "Chao",
+      "mes": "Octubre",
+      "fecha": "23/09/2026",
+      "bolsas": 1405.7,
+      "kg_bolsa": 1,
+      "total_kg": 1405.68,
+      "cap_saco": 40,
+      "n_sacos": 35,
+      "unidades": 5.7
+    },
+    {
+      "mun": "Chiclayo",
+      "mes": "Octubre",
+      "fecha": "28/09/2026",
+      "bolsas": 8951,
+      "kg_bolsa": 1,
+      "total_kg": 8951,
+      "cap_saco": 40,
+      "n_sacos": 223,
+      "unidades": 31
+    },
+    {
+      "mun": "Chilete",
+      "mes": "O.C.",
+      "fecha": "24/09/2026",
+      "bolsas": 860,
+      "kg_bolsa": 0.686,
+      "total_kg": 590.1,
+      "cap_saco": 60,
+      "n_sacos": 14,
+      "unidades": 20
+    },
+    {
+      "mun": "Chilete",
+      "mes": "Octubre",
+      "fecha": "30/09/2026",
+      "bolsas": 860,
+      "kg_bolsa": 0.934,
+      "total_kg": 803.0,
+      "cap_saco": 45,
+      "n_sacos": 19,
+      "unidades": 5
+    },
+    {
+      "mun": "Chilete",
+      "mes": "Noviembre",
+      "fecha": "30/09/2026",
+      "bolsas": 860,
+      "kg_bolsa": 0.904,
+      "total_kg": 777.1,
+      "cap_saco": 45,
+      "n_sacos": 19,
+      "unidades": 5
+    },
+    {
+      "mun": "Chilete",
+      "mes": "Diciembre",
+      "fecha": "30/09/2026",
+      "bolsas": 860,
+      "kg_bolsa": 0.934,
+      "total_kg": 803.0,
+      "cap_saco": 45,
+      "n_sacos": 19,
+      "unidades": 5
+    },
+    {
+      "mun": "Chocope",
+      "mes": "Octubre",
+      "fecha": "18/09/2026",
+      "bolsas": 1010,
+      "kg_bolsa": 0.868,
+      "total_kg": 876.68,
+      "cap_saco": 50,
+      "n_sacos": 20,
+      "unidades": 10
+    },
+    {
+      "mun": "Chongoyape",
+      "mes": "Octubre",
+      "fecha": "25/09/2026",
+      "bolsas": 1100,
+      "kg_bolsa": 1.52,
+      "total_kg": 1672.11,
+      "cap_saco": 30,
+      "n_sacos": 36,
+      "unidades": 20
+    },
+    {
+      "mun": "Coishco",
+      "mes": "Octubre",
+      "fecha": "28/09/2026",
+      "bolsas": 1128,
+      "kg_bolsa": 1.703,
+      "total_kg": 1921.36,
+      "cap_saco": 22,
+      "n_sacos": 51,
+      "unidades": 6
+    },
+    {
+      "mun": "Encañada",
+      "mes": "O.C.",
+      "fecha": "30/08/2026",
+      "bolsas": 33338,
+      "kg_bolsa": 1.001,
+      "total_kg": 33364.67,
+      "cap_saco": 40,
+      "n_sacos": 833,
+      "unidades": 18
+    },
+    {
+      "mun": "Encañada",
+      "mes": "Octubre / Noviembre / Diciembre",
+      "fecha": "28/09/2026",
+      "bolsas": 12501,
+      "kg_bolsa": 1.68,
+      "total_kg": 21001.68,
+      "cap_saco": 25,
+      "n_sacos": 500,
+      "unidades": 1
+    },
+    {
+      "mun": "Florencia de Mora",
+      "mes": "O.C.",
+      "fecha": "23/09/2026",
+      "bolsas": 4480,
+      "kg_bolsa": 0.835,
+      "total_kg": 3740.8,
+      "cap_saco": 40,
+      "n_sacos": 112,
+      "unidades": 0
+    },
+    {
+      "mun": "Guadalupito",
+      "mes": "Octubre",
+      "fecha": "30/09/2026",
+      "bolsas": 1200,
+      "kg_bolsa": 0.724,
+      "total_kg": 868.25,
+      "cap_saco": 60,
+      "n_sacos": 20,
+      "unidades": 0
+    },
+    {
+      "mun": "Huabal",
+      "mes": "Setiembre",
+      "fecha": "15/09/2026",
+      "bolsas": 1433,
+      "kg_bolsa": 1,
+      "total_kg": 1433,
+      "cap_saco": 40,
+      "n_sacos": 35,
+      "unidades": 33
+    },
+    {
+      "mun": "Huabal",
+      "mes": "Octubre",
+      "fecha": "15/09/2026",
+      "bolsas": 1433,
+      "kg_bolsa": 1,
+      "total_kg": 1433,
+      "cap_saco": 40,
+      "n_sacos": 35,
+      "unidades": 33
+    },
+    {
+      "mun": "Hualgayoc",
+      "mes": "O.C.",
+      "fecha": "20/09/2026",
+      "bolsas": 2333,
+      "kg_bolsa": 1.397,
+      "total_kg": 3259.2,
+      "cap_saco": 30,
+      "n_sacos": 77,
+      "unidades": 23
+    },
+    {
+      "mun": "Hualgayoc",
+      "mes": "Octubre / Noviembre / Diciembre",
+      "fecha": "15/09/2026",
+      "bolsas": 6999,
+      "kg_bolsa": 1.687,
+      "total_kg": 11807.73,
+      "cap_saco": 25,
+      "n_sacos": 279,
+      "unidades": 24
+    },
+    {
+      "mun": "Huamachuco",
+      "mes": "Octubre",
+      "fecha": "25/09/2026",
+      "bolsas": 3490,
+      "kg_bolsa": 1.32,
+      "total_kg": 4606.8,
+      "cap_saco": 35,
+      "n_sacos": 99,
+      "unidades": 25
+    },
+    {
+      "mun": "Huaranchal",
+      "mes": "Octubre",
+      "fecha": "15/09/2026",
+      "bolsas": 888,
+      "kg_bolsa": 1,
+      "total_kg": 888,
+      "cap_saco": 40,
+      "n_sacos": 22,
+      "unidades": 8
+    },
+    {
+      "mun": "Huaranchal",
+      "mes": "Noviembre",
+      "fecha": "15/09/2026",
+      "bolsas": 888,
+      "kg_bolsa": 1,
+      "total_kg": 888,
+      "cap_saco": 40,
+      "n_sacos": 22,
+      "unidades": 8
+    },
+    {
+      "mun": "Huaranchal",
+      "mes": "Diciembre",
+      "fecha": "15/09/2026",
+      "bolsas": 888,
+      "kg_bolsa": 1,
+      "total_kg": 888,
+      "cap_saco": 40,
+      "n_sacos": 22,
+      "unidades": 8
+    }
+  ]
+}

@@ -1,0 +1,1065 @@
+{
+  "Agua Blanca": {
+    "Trigo": 20.0,
+    "Avena": 68.0,
+    "Quinua": 4.0,
+    "Soya": 4.0,
+    "Maca": 4.0
+  },
+  "Alto Biavo": {
+    "Trigo": 20.0,
+    "Avena": 32.0,
+    "Quinua": 4.0,
+    "Maca": 5.0,
+    "Azucar": 39.0
+  },
+  "Alto Trujillo": {
+    "Trigo": 18.01,
+    "Avena": 74.98,
+    "Quinua": 7.0
+  },
+  "Ascope": {
+    "Trigo": 14.99,
+    "Avena": 37.96,
+    "Quinua": 4.01,
+    "Soya": 4.01,
+    "Maca": 4.01,
+    "Azucar": 35.01
+  },
+  "Asuncion": {
+    "Trigo": 20.0,
+    "Avena": 69.48,
+    "Quinua": 3.51,
+    "Soya": 3.51,
+    "Maca": 3.51
+  },
+  "Asuncion - Chacas": {
+    "Trigo": 20.0,
+    "Avena": 69.0,
+    "Quinua": 6.0,
+    "Maca": 5.0
+  },
+  "Barranquita": {
+    "Trigo": 17.96,
+    "Avena": 33.54,
+    "Quinua": 3.49,
+    "Soya": 3.49,
+    "Maca": 3.49,
+    "Azucar": 38.03
+  },
+  "Buenaventura": {
+    "Trigo": 18.75,
+    "Avena": 42.25,
+    "Quinua": 4.0,
+    "Azucar": 35.0
+  },
+  "Buenavista": {
+    "Trigo": 20.0,
+    "Avena": 70.96,
+    "Quinua": 5.04,
+    "Maiz Chufla": 4.0
+  },
+  "Caceres": {
+    "Trigo": 20.0,
+    "Avena": 71.99,
+    "Quinua": 4.01,
+    "Maiz Chufla": 4.01
+  },
+  "Cachachi": {
+    "Trigo": 14.35,
+    "Avena": 42.0,
+    "Quinua": 3.0,
+    "Soya": 2.83,
+    "Maca": 2.83,
+    "Azucar": 35.0
+  },
+  "Cajabamba": {
+    "Trigo": 25.98,
+    "Avena": 67.02,
+    "Quinua": 7.0
+  },
+  "Cajabamba Leche": {
+    "Trigo": 23.0,
+    "Avena": 67.1,
+    "Soya": 4.0,
+    "Leche en Polvo": 5.79,
+    "S. Leche": 0.1
+  },
+  "Cajamarca Rur": {
+    "Trigo": 26.0,
+    "Avena": 61.0,
+    "Quinua": 5.0,
+    "Maiz Chufla": 4.0,
+    "Maca": 4.0
+  },
+  "Cajamarca Urb": {
+    "Trigo": 25.03,
+    "Avena": 56.99,
+    "Quinua": 5.99,
+    "Soya": 4.0,
+    "Maiz Chufla": 4.0,
+    "Maca": 4.0
+  },
+  "Cajamarca Urb - 2025": {
+    "Trigo": 26.0,
+    "Avena": 63.5,
+    "Quinua": 6.0,
+    "Maiz Chufla": 4.5
+  },
+  "Cajatambo": {
+    "Trigo": 20.0,
+    "Avena": 69.0,
+    "Quinua": 6.0,
+    "Maca": 5.0
+  },
+  "Camporredondo": {
+    "Trigo": 94.0,
+    "Quinua": 6.0
+  },
+  "Carabamba": {
+    "Trigo": 17.98,
+    "Avena": 64.53,
+    "Quinua": 3.98,
+    "Soya": 3.98,
+    "Maca": 3.98,
+    "Leche en Polvo": 5.54,
+    "S. Leche": 0.1
+  },
+  "Carabamba1": {
+    "Trigo": 15.0,
+    "Avena": 42.5,
+    "Quinua": 4.0,
+    "Soya": 4.0,
+    "Maca": 4.0,
+    "Leche en Polvo": 5.5,
+    "Azucar": 25.0,
+    "S. Leche": 0.1
+  },
+  "Carhuaz": {
+    "Trigo": 20.0,
+    "Avena": 67.92,
+    "Quinua": 6.04,
+    "Soya": 6.04
+  },
+  "Casa Grande": {
+    "Trigo": 19.04,
+    "Avena": 75.0,
+    "Quinua": 5.96
+  },
+  "Catilluc": {
+    "Trigo": 13.99,
+    "Avena": 42.0,
+    "Quinua": 6.0,
+    "Soya": 4.01,
+    "Maca": 4.01,
+    "Azucar": 30.0
+  },
+  "Chao": {
+    "Trigo": 21.48,
+    "Avena": 67.57,
+    "Quinua": 2.99,
+    "Soya": 3.98,
+    "Maca": 3.98
+  },
+  "Chetilla": {
+    "Trigo": 10.49,
+    "Avena": 41.53,
+    "Quinua": 6.0,
+    "Soya": 3.99,
+    "Azucar": 37.99
+  },
+  "Chiclayo": {
+    "Trigo": 28.0,
+    "Avena": 60.0,
+    "Quinua": 6.0,
+    "Maca": 6.0
+  },
+  "Chiclayo1": {
+    "Trigo": 26.0,
+    "Avena": 65.0,
+    "Quinua": 4.0,
+    "Maca": 5.0
+  },
+  "Chilete": {
+    "Trigo": 19.99,
+    "Avena": 68.04,
+    "Quinua": 3.99,
+    "Soya": 3.99,
+    "Maca": 3.99
+  },
+  "Chiliquin": {
+    "Trigo": 19.96,
+    "Avena": 69.54,
+    "Quinua": 5.46,
+    "Maca": 5.04
+  },
+  "Chimban": {
+    "Trigo": 20.0,
+    "Avena": 68.5,
+    "Quinua": 3.5,
+    "Soya": 4.0,
+    "Maca": 4.0
+  },
+  "Chocope": {
+    "Trigo": 15.0,
+    "Avena": 73.0,
+    "Quinua": 4.0,
+    "Soya": 4.0,
+    "Maca": 4.0
+  },
+  "Chongoyape": {
+    "Trigo": 11.3,
+    "Avena": 42.14,
+    "Quinua": 3.53,
+    "Soya": 4.0,
+    "Maca": 4.0,
+    "Azucar": 35.03
+  },
+  "Choropampa": {
+    "Trigo": 12.5,
+    "Avena": 78.5,
+    "Soya": 4.5,
+    "Maca": 4.5
+  },
+  "Cochabamba": {
+    "Trigo": 19.96,
+    "Avena": 69.11,
+    "Quinua": 3.97,
+    "Maiz Chufla": 2.98,
+    "Maca": 3.97
+  },
+  "Cochan": {
+    "Trigo": 20.0,
+    "Avena": 68.0,
+    "Quinua": 4.0,
+    "Soya": 4.0,
+    "Maca": 4.0
+  },
+  "Coishco": {
+    "Trigo": 19.98,
+    "Avena": 68.0,
+    "Quinua": 4.01,
+    "Soya": 4.01,
+    "Maca": 4.01
+  },
+  "Colcamar": {
+    "Trigo": 46.88,
+    "Avena": 46.88,
+    "Quinua": 6.0,
+    "S. Platano": 0.1
+  },
+  "Condebamba": {
+    "Trigo": 13.78,
+    "Avena": 42.26,
+    "Quinua": 4.5,
+    "Soya": 2.24,
+    "Maca": 2.24,
+    "Azucar": 35.0
+  },
+  "Copallin": {
+    "Trigo": 11.74,
+    "Avena": 40.3,
+    "Quinua": 4.98,
+    "Soya": 4.98,
+    "Azucar": 38.01
+  },
+  "Cospan": {
+    "Trigo": 23.48,
+    "Avena": 65.0,
+    "Quinua": 3.5,
+    "Soya": 4.01,
+    "Maca": 4.01
+  },
+  "El Prado": {
+    "Trigo": 19.99,
+    "Avena": 68.06,
+    "Quinua": 3.99,
+    "Maiz Chufla": 3.99,
+    "Maca": 3.99
+  },
+  "Encañada": {
+    "Trigo": 20.0,
+    "Avena": 71.05,
+    "Quinua": 4.0,
+    "Maca": 4.0,
+    "Cocoa": 0.95
+  },
+  "Enha 1": {
+    "Trigo": 20.0,
+    "Avena": 80.0
+  },
+  "Enha 2": {
+    "Trigo": 46.73,
+    "Avena": 46.43,
+    "Quinua": 5.65,
+    "S. Platano": 1.19
+  },
+  "Enha 3": {
+    "Trigo": 20.02,
+    "Avena": 67.37,
+    "Quinua": 4.91,
+    "Soya": 3.85,
+    "Maca": 3.85
+  },
+  "Enha 4": {
+    "Trigo": 20.0,
+    "Avena": 75.0,
+    "Quinua": 5.0
+  },
+  "Enha 5": {
+    "Trigo": 15.06,
+    "Avena": 42.03,
+    "Quinua": 3.92,
+    "Maca": 3.92,
+    "Azucar": 35.06
+  },
+  "Enha 6": {
+    "Trigo": 19.96,
+    "Avena": 72.06,
+    "Quinua": 3.57,
+    "Maca": 4.41
+  },
+  "Florencia de Mora": {
+    "Trigo": 19.98,
+    "Avena": 74.02,
+    "Quinua": 6.0
+  },
+  "Florida": {
+    "Trigo": 20.0,
+    "Avena": 66.5,
+    "Quinua": 4.5,
+    "Soya": 4.5,
+    "Maca": 4.5
+  },
+  "Gregorio Pita": {
+    "Trigo": 5.35,
+    "Avena": 41.52,
+    "Quinua": 5.0,
+    "Maca": 4.0,
+    "Leche en Polvo": 6.0,
+    "Azucar": 38.0,
+    "S. Leche": 0.1
+  },
+  "Guadalupito": {
+    "Trigo": 19.98,
+    "Avena": 66.09,
+    "Quinua": 3.97,
+    "Maca": 3.97,
+    "Leche en Polvo": 5.99,
+    "S. Leche": 0.1
+  },
+  "Huabal": {
+    "Trigo": 20.03,
+    "Avena": 68.56,
+    "Quinua": 3.8,
+    "Soya": 3.8,
+    "Maca": 3.8
+  },
+  "Hualgayoc": {
+    "Trigo": 20.0,
+    "Avena": 65.47,
+    "Quinua": 3.01,
+    "Soya": 3.01,
+    "Maca": 3.01,
+    "Leche en Polvo": 5.5,
+    "S. Leche": 0.1
+  },
+  "Huamachuco": {
+    "Trigo": 12.5,
+    "Avena": 37.01,
+    "Quinua": 4.49,
+    "Soya": 4.49,
+    "Maca": 4.49,
+    "Azucar": 37.01
+  },
+  "Huambo": {
+    "Trigo": 19.99,
+    "Avena": 68.09,
+    "Quinua": 3.97,
+    "Soya": 3.97,
+    "Maca": 3.97
+  },
+  "Huancas": {
+    "Trigo": 47.0,
+    "Avena": 47.0,
+    "Quinua": 5.5,
+    "S. Platano": 0.14
+  },
+  "Huaranchal": {
+    "Trigo": 20.01,
+    "Avena": 72.97,
+    "Quinua": 4.99,
+    "Maca": 2.03
+  },
+  "Huarango": {
+    "Trigo": 20.0,
+    "Avena": 72.89,
+    "Quinua": 3.0,
+    "Maiz Chufla": 3.99,
+    "S. Platano": 0.11
+  },
+  "Huaso": {
+    "Trigo": 10.74,
+    "Avena": 42.24,
+    "Quinua": 3.99,
+    "Soya": 3.99,
+    "Maca": 3.99,
+    "Azucar": 35.05
+  },
+  "Huaso (azucar)": {
+    "Azucar": 100
+  },
+  "Huayllabamba": {
+    "Trigo": 20.0,
+    "Avena": 75.0,
+    "Quinua": 5.0
+  },
+  "Ichocan": {
+    "Trigo": 8.55,
+    "Avena": 42.17,
+    "Soya": 3.85,
+    "Maca": 3.85,
+    "Leche en Polvo": 6.45,
+    "Azucar": 35.1,
+    "S. Leche": 0.1
+  },
+  "IMPERIUM": {
+    "Trigo": 20.0,
+    "Avena": 72.0,
+    "Quinua": 4.0,
+    "Maca": 4.0
+  },
+  "IMPERIUM 2": {
+    "Trigo": 47.22,
+    "Avena": 47.22,
+    "Maca": 5.56
+  },
+  "Imperium Plt": {
+    "Trigo": 19.74,
+    "Avena": 67.98,
+    "Quinua": 4.39,
+    "Soya": 3.95,
+    "Maca": 3.95,
+    "S. Platano": 0.1
+  },
+  "Ingenio": {
+    "Trigo": 20.0,
+    "Avena": 73.0,
+    "Quinua": 7.0
+  },
+  "Jesus": {
+    "Trigo": 22.0,
+    "Avena": 64.94,
+    "Quinua": 4.01,
+    "Soya": 3.02,
+    "Maiz Chufla": 3.02,
+    "Maca": 3.02
+  },
+  "Jose Manuel Quiroz": {
+    "Trigo": 18.97,
+    "Avena": 70.94,
+    "Quinua": 3.99,
+    "Maca": 6.01
+  },
+  "Jose Sabogal": {
+    "Trigo": 15.0,
+    "Avena": 30.5,
+    "Quinua": 4.0,
+    "Soya": 4.0,
+    "Leche en Polvo": 6.5,
+    "Azucar": 40.0
+  },
+  "La Banda de Shilcayo": {
+    "Trigo": 11.03,
+    "Avena": 39.87,
+    "Quinua": 3.0,
+    "Soya": 3.0,
+    "Maca": 3.0,
+    "Azucar": 40.08
+  },
+  "La Esperanza": {
+    "Trigo": 23.0,
+    "Avena": 42.0,
+    "Quinua": 5.0,
+    "Azucar": 30.0
+  },
+  "La Florida": {
+    "Trigo": 19.93,
+    "Avena": 67.98,
+    "Quinua": 4.03,
+    "Soya": 4.03,
+    "Maca": 4.03
+  },
+  "Llacanora": {
+    "Trigo": 25.94,
+    "Avena": 61.97,
+    "Quinua": 3.05,
+    "Maiz Chufla": 3.99,
+    "Maca": 5.05
+  },
+  "Llama": {
+    "Trigo": 14.97,
+    "Avena": 39.53,
+    "Quinua": 3.5,
+    "Soya": 3.5,
+    "Maca": 3.5,
+    "Azucar": 35.03
+  },
+  "Longotea": {
+    "Trigo": 12.0,
+    "Avena": 40.55,
+    "Quinua": 2.5,
+    "Soya": 2.5,
+    "Maca": 2.5,
+    "Leche en Polvo": 5.0,
+    "Azucar": 34.92,
+    "S. Leche": 0.1
+  },
+  "Longuita": {
+    "Trigo": 20.0,
+    "Avena": 71.67,
+    "Quinua": 3.89,
+    "Maca": 4.44
+  },
+  "Luya": {
+    "Trigo": 20.0,
+    "Avena": 72.0,
+    "Quinua": 4.0,
+    "Maca": 4.0
+  },
+  "Luya Az": {
+    "Trigo": 15.02,
+    "Avena": 41.99,
+    "Quinua": 3.99,
+    "Maca": 3.99,
+    "Azucar": 35.02
+  },
+  "Macate": {
+    "Trigo": 20.0,
+    "Avena": 70.0,
+    "Quinua": 5.0,
+    "Maca": 5.0
+  },
+  "Magdalena": {
+    "Trigo": 27.83,
+    "Avena": 63.18,
+    "Quinua": 5.0,
+    "Soya": 4.01
+  },
+  "Magdalena de Cao": {
+    "Trigo": 26.1,
+    "Avena": 65.93,
+    "Quinua": 4.12,
+    "Soya": 4.12
+  },
+  "Mancos": {
+    "Trigo": 20.0,
+    "Avena": 72.94,
+    "Quinua": 7.06
+  },
+  "Manseriche": {
+    "Trigo": 16.99,
+    "Avena": 36.03,
+    "Quinua": 3.97,
+    "Soya": 3.97,
+    "Maca": 4.04,
+    "Azucar": 35.0
+  },
+  "Marcabal": {
+    "Trigo": 9.75,
+    "Avena": 42.25,
+    "Soya": 3.99,
+    "Maca": 3.99,
+    "Azucar": 34.99,
+    "Kiwicha": 5.0
+  },
+  "Marcara": {
+    "Trigo": 20.0,
+    "Avena": 73.0,
+    "Quinua": 7.0
+  },
+  "Marcara1": {
+    "Trigo": 20.0,
+    "Avena": 71.0,
+    "Quinua": 6.0,
+    "Maca": 3.0
+  },
+  "Matara": {
+    "Trigo": 17.52,
+    "Avena": 70.0,
+    "Quinua": 5.52,
+    "Soya": 3.96,
+    "Maca": 3.0
+  },
+  "Morales": {
+    "Trigo": 13.99,
+    "Avena": 40.56,
+    "Quinua": 3.5,
+    "Soya": 3.5,
+    "Maca": 3.5,
+    "Azucar": 34.97
+  },
+  "Moyobamba": {
+    "Trigo": 15.0,
+    "Avena": 39.89,
+    "Soya": 2.0,
+    "Maca": 5.0,
+    "Azucar": 38.0,
+    "S. Platano": 0.11
+  },
+  "Namballe": {
+    "Trigo": 20.0,
+    "Avena": 74.0,
+    "Quinua": 5.99
+  },
+  "Namora": {
+    "Trigo": 20.01,
+    "Avena": 70.01,
+    "Quinua": 4.99,
+    "Maiz Chufla": 4.99
+  },
+  "Nueva Arica": {
+    "Trigo": 20.13,
+    "Avena": 69.8,
+    "Quinua": 5.03,
+    "Soya": 5.03
+  },
+  "Nueva Cajamarca": {
+    "Trigo": 19.99,
+    "Avena": 40.0,
+    "Quinua": 5.01,
+    "Azucar": 35.01
+  },
+  "Olleros": {
+    "Trigo": 20.04,
+    "Avena": 69.94,
+    "Quinua": 5.01,
+    "Maca": 5.01
+  },
+  "Olmos": {
+    "Trigo": 8.0,
+    "Avena": 76.88,
+    "Quinua": 4.01,
+    "Soya": 4.01,
+    "Leche en Polvo": 7.0,
+    "S. Leche": 0.1
+  },
+  "Organos": {
+    "Trigo": 26.99,
+    "Avena": 66.99,
+    "Quinua": 6.03
+  },
+  "Pisuquia": {
+    "Trigo": 20.0,
+    "Avena": 71.5,
+    "Quinua": 4.0,
+    "Maca": 4.5
+  },
+  "Pomahuaca": {
+    "Trigo": 20.03,
+    "Avena": 70.03,
+    "Quinua": 4.97,
+    "Soya": 4.97
+  },
+  "Qaliwarma Avena": {
+    "Avena": 100
+  },
+  "Qaliwarma Kiwicha": {
+    "Avena": 94.0,
+    "Kiwicha": 6.0
+  },
+  "Qaliwarma Quinua": {
+    "Avena": 94.0,
+    "Quinua Qaliwarma": 6.0
+  },
+  "Querocotillo": {
+    "Trigo": 18.01,
+    "Avena": 66.94,
+    "Soya": 4.02,
+    "Maiz Chufla": 3.0,
+    "Maca": 4.02,
+    "Kiwicha": 4.02
+  },
+  "Querocoto": {
+    "Trigo": 20.0,
+    "Avena": 69.52,
+    "Quinua": 4.98,
+    "Maca": 5.5
+  },
+  "Quillo": {
+    "Trigo": 29.0,
+    "Avena": 60.0,
+    "Quinua": 3.5,
+    "Maca": 3.0,
+    "Leche en Polvo": 4.5,
+    "S. Leche": 0.1
+  },
+  "Salaverry": {
+    "Trigo": 18.05,
+    "Avena": 75.97,
+    "Quinua": 5.98
+  },
+  "San Antonio": {
+    "Trigo": 14.85,
+    "Avena": 78.55,
+    "Quinua": 6.6
+  },
+  "San Benito": {
+    "Trigo": 18.02,
+    "Avena": 70.6,
+    "Quinua": 3.39,
+    "Soya": 4.07,
+    "Maca": 3.93
+  },
+  "San Carlos": {
+    "Trigo": 46.82,
+    "Avena": 47.27,
+    "Quinua": 5.45,
+    "S. Platano": 0.14
+  },
+  "San Gregorio": {
+    "Trigo": 20.0,
+    "Avena": 69.35,
+    "Quinua": 3.55,
+    "Soya": 3.55,
+    "Maca": 3.55
+  },
+  "San Ignacio": {
+    "Trigo": 21.99,
+    "Avena": 65.88,
+    "Quinua": 5.0,
+    "Soya": 3.51,
+    "Maca": 3.51,
+    "S. Canela": 0.1
+  },
+  "San Isidro de Maino": {
+    "Trigo": 46.54,
+    "Avena": 46.54,
+    "Quinua": 5.77,
+    "S. Platano": 0.19
+  },
+  "San Isidro Maino": {
+    "Trigo": 19.44,
+    "Avena": 80.56
+  },
+  "San Jose": {
+    "Trigo": 22.03,
+    "Avena": 68.99,
+    "Quinua": 3.0,
+    "Soya": 3.0,
+    "Maca": 3.0
+  },
+  "San Jose Alto": {
+    "Trigo": 24.6,
+    "Avena": 68.65,
+    "Quinua": 4.0,
+    "Soya": 2.75
+  },
+  "San Jose de Lourdes": {
+    "Trigo": 20.0,
+    "Avena": 70.02,
+    "Quinua": 4.99,
+    "Maca": 4.99
+  },
+  "San Juan": {
+    "Trigo": 21.79,
+    "Avena": 66.22,
+    "Quinua": 4.01,
+    "Soya": 3.99,
+    "Maca": 3.99
+  },
+  "San Luis - 25": {
+    "Trigo": 18.02,
+    "Avena": 69.96,
+    "Quinua": 4.01,
+    "Soya": 4.01,
+    "Maca": 4.01
+  },
+  "San Marcos - Ancash": {
+    "Trigo": 22.21,
+    "Avena": 66.99,
+    "Quinua": 6.0,
+    "Soya": 3.76,
+    "Maca": 3.76,
+    "S. Lucuma": 0.1
+  },
+  "San Marcos - Caj.25": {
+    "Trigo": 6.76,
+    "Avena": 40.21,
+    "Quinua": 3.51,
+    "Soya": 3.54,
+    "Leche en Polvo": 5.99,
+    "Azucar": 39.99,
+    "S. Leche": 0.1
+  },
+  "San Martin": {
+    "Trigo": 14.99,
+    "Avena": 46.89,
+    "Maiz Chufla": 3.0,
+    "Azucar": 32.01,
+    "Kiwicha": 3.0,
+    "S. Platano": 0.11
+  },
+  "San Martin-25": {
+    "Trigo": 13.1,
+    "Avena": 46.85,
+    "Quinua": 4.0,
+    "Soya": 3.0,
+    "Maca": 3.0,
+    "Azucar": 30.0
+  },
+  "San Miguel": {
+    "Trigo": 14.99,
+    "Avena": 42.01,
+    "Quinua": 4.0,
+    "Maca": 4.0,
+    "Azucar": 35.0
+  },
+  "San Pablo": {
+    "Trigo": 21.7,
+    "Avena": 66.98,
+    "Quinua": 4.49,
+    "Soya": 3.81,
+    "Maca": 3.01
+  },
+  "San Pablo - Trigo": {
+    "Trigo": 100
+  },
+  "San Pedro": {
+    "Trigo": 20.0,
+    "Avena": 68.0,
+    "Quinua": 4.0,
+    "Soya": 4.0,
+    "Maiz Chufla": 4.0
+  },
+  "San Roque": {
+    "Trigo": 20.01,
+    "Avena": 37.01,
+    "Quinua": 3.99,
+    "Maca": 3.99,
+    "Azucar": 34.99
+  },
+  "Santa": {
+    "Trigo": 26.0,
+    "Avena": 65.0,
+    "Quinua": 4.5,
+    "Soya": 4.5
+  },
+  "Sarin": {
+    "Trigo": 20.0,
+    "Avena": 74.78,
+    "Quinua": 5.51,
+    "S. Vainilla": 0.1
+  },
+  "Shanao - 25": {
+    "Trigo": 11.5,
+    "Avena": 45.5,
+    "Quinua": 4.0,
+    "Maca": 4.0,
+    "Azucar": 35.0
+  },
+  "Sitacocha": {
+    "Trigo": 28.49,
+    "Avena": 67.0,
+    "Quinua": 4.51
+  },
+  "Soloco": {
+    "Trigo": 47.11,
+    "Avena": 47.25,
+    "Quinua": 5.51,
+    "S. Platano": 0.14
+  },
+  "Supe": {
+    "Trigo": 20.0,
+    "Avena": 74.0,
+    "Quinua": 6.0
+  },
+  "Suyo": {
+    "Trigo": 21.96,
+    "Avena": 76.03,
+    "Quinua": 6.58,
+    "Maca": 5.46
+  },
+  "Tantarica": {
+    "Trigo": 21.0,
+    "Avena": 65.0,
+    "Quinua": 6.0,
+    "Soya": 4.0,
+    "Maca": 4.0
+  },
+  "Taurija": {
+    "Trigo": 20.0,
+    "Avena": 65.22,
+    "Quinua": 4.93,
+    "Soya": 4.93,
+    "Maca": 4.93
+  },
+  "Tongod": {
+    "Trigo": 13.99,
+    "Avena": 42.05,
+    "Quinua": 4.97,
+    "Soya": 4.01,
+    "Azucar": 34.99
+  },
+  "Totora": {
+    "Trigo": 20.0,
+    "Avena": 71.5,
+    "Quinua": 4.02,
+    "Maca": 4.49
+  },
+  "Trujillo": {
+    "Trigo": 22.0,
+    "Avena": 69.9,
+    "Soya": 5.0,
+    "Maiz Chufla": 3.0,
+    "S. Platano": 0.1
+  },
+  "Tumbaden": {
+    "Avena": 45.0,
+    "Quinua": 5.0,
+    "Soya": 5.0,
+    "Maca": 5.0,
+    "Azucar": 40.0
+  },
+  "Urpay": {
+    "Trigo": 20.0,
+    "Avena": 68.0,
+    "Quinua": 4.0,
+    "Soya": 4.0,
+    "Maca": 4.0
+  },
+  "Utcubamba": {
+    "Trigo": 15.5,
+    "Avena": 72.5,
+    "Quinua": 3.0,
+    "Soya": 4.5,
+    "Maca": 4.5
+  },
+  "Utcubamba - 25": {
+    "Trigo": 20.0,
+    "Avena": 68.0,
+    "Quinua": 4.0,
+    "Soya": 4.0,
+    "Maca": 4.0
+  },
+  "Val y Fio Av": {
+    "Trigo": 20.0,
+    "Avena": 80.0
+  },
+  "Val y Fio Coc": {
+    "Trigo": 19.05,
+    "Avena": 70.63,
+    "Quinua": 4.76,
+    "Maca": 4.76,
+    "Cocoa": 0.79
+  },
+  "Val y Fio Har": {
+    "Trigo": 25.0,
+    "Avena": 64.0,
+    "Quinua": 6.0,
+    "Maca": 5.0,
+    "S. Platano": 0.1
+  },
+  "Val y Fio Hj": {
+    "Trigo": 21.98,
+    "Avena": 73.54,
+    "Quinua": 4.48
+  },
+  "Val y Fio Mc": {
+    "Trigo": 20.0,
+    "Avena": 71.0,
+    "Quinua": 4.0,
+    "Maca": 5.0
+  },
+  "Val y Fio Mc1": {
+    "Trigo": 20.0,
+    "Avena": 70.0,
+    "Quinua": 5.0,
+    "Maca": 5.0
+  },
+  "Val y Fio Mz": {
+    "Trigo": 87.93,
+    "Quinua": 6.03,
+    "Maiz Chufla": 6.03
+  },
+  "Val y Fio Plt": {
+    "Trigo": 46.96,
+    "Avena": 46.96,
+    "Quinua": 6.09,
+    "S. Platano": 0.11
+  },
+  "Val y Fio Sy/Az": {
+    "Trigo": 14.75,
+    "Avena": 38.93,
+    "Quinua": 4.1,
+    "Soya": 4.1,
+    "Azucar": 38.11
+  },
+  "Val y Fio Sy/Mz": {
+    "Trigo": 19.94,
+    "Avena": 68.45,
+    "Quinua": 3.87,
+    "Soya": 3.87,
+    "Maiz Chufla": 3.87
+  },
+  "Vapa": {
+    "Trigo": 11.7,
+    "Avena": 32.9,
+    "Quinua": 4.5,
+    "Soya": 3.0,
+    "Maiz pollo": 2.9,
+    "Maca": 5.0,
+    "Azucar": 40.0
+  },
+  "Vapa 2": {
+    "Trigo": 13.0,
+    "Avena": 20.0,
+    "Quinua": 7.0,
+    "Maca": 5.0,
+    "Azucar": 44.9
+  },
+  "Vapa 3": {
+    "Trigo": 20.0,
+    "Avena": 38.0,
+    "Quinua": 7.0,
+    "Maca": 5.0,
+    "Azucar": 20.0
+  },
+  "Victor Larco": {
+    "Trigo": 8.52,
+    "Avena": 45.48,
+    "Quinua": 4.98,
+    "Maca": 6.01,
+    "Azucar": 35.02
+  },
+  "Viru": {
+    "Trigo": 20.0,
+    "Avena": 67.0,
+    "Quinua": 4.0,
+    "Soya": 4.0,
+    "Maca": 5.0
+  },
+  "Yautan": {
+    "Trigo": 20.01,
+    "Avena": 67.9,
+    "Quinua": 3.02,
+    "Maca": 3.99,
+    "Leche en Polvo": 5.03,
+    "S. Leche": 0.1
+  },
+  "Yonan": {
+    "Trigo": 19.0,
+    "Avena": 71.0,
+    "Quinua": 4.0,
+    "Leche en Polvo": 6.0,
+    "S. Leche": 0.1
+  },
+  "Zapatero": {
+    "Trigo": 15.01,
+    "Avena": 36.54,
+    "Quinua": 3.49,
+    "Soya": 3.49,
+    "Maca": 3.49,
+    "Azucar": 37.99
+  }
+}
