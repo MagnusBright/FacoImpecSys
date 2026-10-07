@@ -1,0 +1,14 @@
+# Archivos temporales de macOS / Windows
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Archivos temporales de Excel
+~$*.xlsx
+~$Control stock 2026.xlsx
+
+# Entornos y caché (en caso de que luego agregues Python u otro backend)
+__pycache__/
+venv/
+env/
+.env
