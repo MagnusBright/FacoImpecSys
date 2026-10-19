@@ -209,7 +209,7 @@ def leche_rows():
         
         status = "✅" if conf == "Confirmado" else "🟡"
         rows += f"""
-          <tr class="trow hover:bg-blue-50 transition" data-mes="{m}">
+          <tr class="trow hover:bg-blue-50 transition" data-mes="{m}" data-mun="{mu.lower()}">
             <td class="px-3 py-2 font-semibold text-gray-800 text-xs">{mu}</td>
             <td class="px-3 py-2 text-xs text-gray-600">{m}</td>
             <td class="px-3 py-2 text-xs font-mono text-gray-700">{fn}</td>
@@ -233,7 +233,7 @@ def pendientes_leche_rows():
         mu = item.get("mun","")
         
         rows += f"""
-          <tr class="trow hover:bg-orange-50 transition" data-mes="{m}">
+          <tr class="trow hover:bg-orange-50 transition" data-mes="{m}" data-mun="{mu.lower()}">
             <td class="px-2 py-1 font-semibold text-gray-800 text-[11px] truncate max-w-[120px]">{mu}</td>
             <td class="px-2 py-1 text-[11px] text-gray-600 truncate max-w-[70px]">{m}</td>
             <td class="px-2 py-1 text-[11px] font-mono text-gray-700">{fn}</td>
@@ -556,6 +556,7 @@ html_content = f"""<!DOCTYPE html>
       </div>
       <div class="flex items-center gap-2">
         <input type="text" id="search-cereal-input" oninput="filterTablesText()" placeholder="🔍 Buscar municipalidad..." class="border border-gray-300 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:border-red-500 w-48">
+        <button onclick="openPdfModal()" class="text-xs bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1.5 rounded-lg font-bold transition flex items-center gap-1 shadow-sm">📄 Importar O.C. / PDF</button>
         <button onclick="openNewOrderModal()" class="text-xs bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 rounded-lg font-bold transition flex items-center gap-1 shadow-sm">➕ Ingresar Orden</button>
         <button onclick="setTab('formulas')" class="text-xs bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 px-3 py-1.5 rounded-lg font-bold transition hidden sm:block">⚙️ Fórmulas</button>
       </div>
@@ -593,11 +594,18 @@ html_content = f"""<!DOCTYPE html>
 ═══════════════════════════════════════════════════════════ -->
 <section id="pane-leche" class="tab-pane">
   <div class="bg-white rounded-xl border border-gray-200 shadow-sm">
-    <div class="px-4 pt-4 pb-2 border-b border-gray-100">
-      <h2 class="font-black text-gray-900">🥛 Cronograma de Entregas — Leche Evaporada Gloria (Caja ×48 latas)
-        <span class="text-xs font-normal text-gray-400 ml-2">{len(pendientes_data.get('leche',[]))} pendientes</span>
-      </h2>
-      <p class="text-xs text-gray-400 mt-0.5">1 Caja = 48 latas de 410g • Faltan 579 cajas por adquirir según proyección</p>
+    <div class="flex items-center justify-between px-4 pt-4 pb-2 border-b border-gray-100 flex-wrap gap-2">
+      <div>
+        <h2 class="font-black text-gray-900 flex items-center gap-2">🥛 Cronograma de Entregas — Leche Evaporada Gloria (Caja ×48 latas)
+          <span class="text-xs font-normal text-gray-400">({len(pendientes_data.get('leche',[]))} pendientes)</span>
+        </h2>
+        <p class="text-xs text-gray-400 mt-0.5">1 Caja = 48 latas de 410g • Faltan 579 cajas por adquirir según proyección</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <input type="text" id="search-leche-input" oninput="filterTablesTextLeche()" placeholder="🔍 Buscar municipalidad..." class="border border-gray-300 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:border-red-500 w-48">
+        <button onclick="openPdfModal()" class="text-xs bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1.5 rounded-lg font-bold transition flex items-center gap-1 shadow-sm">📄 Importar O.C. / PDF</button>
+        <button onclick="openNewOrderModal()" class="text-xs bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 rounded-lg font-bold transition flex items-center gap-1 shadow-sm">➕ Ingresar Orden</button>
+      </div>
     </div>
     {month_filter('leche')}
     <div class="overflow-x-auto">
@@ -617,6 +625,7 @@ html_content = f"""<!DOCTYPE html>
     </div>
     <div class="px-4 py-3 bg-gray-50 border-t border-gray-100 flex gap-4 text-xs text-gray-500">
       <span>Total latas pendientes: <strong class="text-blue-600" id="sum-leche-latas">—</strong></span>
+      <span>Filas visibles: <strong id="count-leche">—</strong></span>
       <span class="ml-4 text-red-500 font-bold">⚠️ Déficit estimado: 579 cajas (27,792 latas)</span>
     </div>
   </div>
@@ -1463,19 +1472,22 @@ html_content = f"""<!DOCTYPE html>
   <!-- WA chat area -->
   <div class="wa-bg px-3 py-3 overflow-y-auto flex-1" style="height:350px;" id="wa-chat">
     <div class="wa-bubble-bot">
-      👋 ¡Hola! Soy el asistente de FACOIMPEC.<br>
-      Puedo registrar <strong>entregas, salidas, arribos y plazos</strong> directamente en el sistema.<br><br>
-      Dime qué ocurrió o manda un audio 🎤
+      👋 ¡Hola! Soy el asistente operativo de <strong>FACOIMPEC</strong>.<br><br>
+      Puedes consultarme sobre cualquier orden de compra, municipalidad o stock en tiempo real.<br><br>
+      💡 <em>Por ejemplo:</em><br>
+      • "¿Cuánto se tiene que cargar para Llama?"<br>
+      • "¿Cuánto se necesita para cubrir las órdenes de leche de este mes?"<br>
+      • "¿Cuánto cereal falta para Octubre?"
       <div class="wa-time">09:00</div>
     </div>
   </div>
 
-  <!-- Quick actions -->
+  <!-- Quick queries / queries frecuentes -->
   <div class="bg-gray-100 px-2 py-2 flex gap-1.5 flex-wrap border-t border-gray-200">
-    <button onclick="waQuickAction('camion')" class="text-[10px] bg-white border border-gray-300 text-gray-700 px-2 py-1 rounded-full font-semibold hover:bg-gray-50">🚛 Llegó</button>
-    <button onclick="waQuickAction('envasado')" class="text-[10px] bg-white border border-gray-300 text-gray-700 px-2 py-1 rounded-full font-semibold hover:bg-gray-50">📦 Envasado</button>
-    <button onclick="waQuickAction('despacho')" class="text-[10px] bg-white border border-gray-300 text-gray-700 px-2 py-1 rounded-full font-semibold hover:bg-gray-50">🚚 Despacho</button>
-    <button onclick="waQuickAction('entrega')" class="text-[10px] bg-white border border-gray-300 text-gray-700 px-2 py-1 rounded-full font-semibold hover:bg-gray-50">✅ Entregado</button>
+    <button onclick="waQuickAction('llama')" class="text-[10px] bg-white border border-gray-300 text-gray-700 px-2 py-1 rounded-full font-semibold hover:bg-gray-50">📍 Carga Llama</button>
+    <button onclick="waQuickAction('leche_mes')" class="text-[10px] bg-white border border-gray-300 text-gray-700 px-2 py-1 rounded-full font-semibold hover:bg-gray-50">🥛 Demanda Leche</button>
+    <button onclick="waQuickAction('octubre')" class="text-[10px] bg-white border border-gray-300 text-gray-700 px-2 py-1 rounded-full font-semibold hover:bg-gray-50">🥣 Cereal Octubre</button>
+    <button onclick="waQuickAction('stock_critico')" class="text-[10px] bg-white border border-gray-300 text-gray-700 px-2 py-1 rounded-full font-semibold hover:bg-gray-50">⚠️ Stock Crítico</button>
   </div>
 
   <!-- WA Input bar + Voz -->
@@ -1624,10 +1636,19 @@ function setTab(name) {{
 // ── MONTH FILTER ────────────────────────────────────────────
 
 // ── NEW: DYNAMIC FILTERS & DATE EDITS ───────────────────────────
-let currentMonthFilter = 'Todos';
+let monthFilters = {{
+  cereal: 'Todos',
+  leche: 'Todos',
+  'pend-cereal': 'Todos',
+  'pend-leche': 'Todos',
+  'ent-cereal': 'Todos',
+  'ent-leche': 'Todos',
+  resumen: 'Todos',
+  kardex: 'Todos'
+}};
 
 function filterMonth(filterId, btn, mes) {{
-  currentMonthFilter = mes;
+  monthFilters[filterId] = mes;
   const container = document.getElementById('mf-' + filterId);
   if (container) {{
     container.querySelectorAll('.month-pill').forEach(p => {{
@@ -1646,9 +1667,19 @@ function filterTablesText() {{
   applyTableFilters('cereal');
 }}
 
+function filterTablesTextLeche() {{
+  applyTableFilters('leche');
+}}
+
 function applyTableFilters(filterId) {{
-  const searchInput = document.getElementById('search-cereal-input');
-  const searchText = searchInput ? searchInput.value.toLowerCase() : '';
+  let searchInput = null;
+  if (filterId === 'cereal') {{
+    searchInput = document.getElementById('search-cereal-input');
+  }} else if (filterId === 'leche') {{
+    searchInput = document.getElementById('search-leche-input');
+  }}
+  const searchText = searchInput ? searchInput.value.toLowerCase().trim() : '';
+  const currentMonth = monthFilters[filterId] || 'Todos';
   
   const tbodies = document.querySelectorAll('[id*="' + filterId + '"]');
   tbodies.forEach(tb => {{
@@ -1659,7 +1690,7 @@ function applyTableFilters(filterId) {{
       const rowMes = row.getAttribute('data-mes') || '';
       const rowMun = row.getAttribute('data-mun') || (row.children[0] ? row.children[0].textContent.toLowerCase() : '');
       
-      const matchMonth = (currentMonthFilter === 'Todos') || rowMes.toLowerCase().includes(currentMonthFilter.toLowerCase());
+      const matchMonth = (currentMonth === 'Todos') || rowMes.toLowerCase().includes(currentMonth.toLowerCase());
       const matchText = !searchText || rowMun.includes(searchText);
       
       const show = matchMonth && matchText;
@@ -1679,7 +1710,7 @@ function applyTableFilters(filterId) {{
     const lataEl  = document.getElementById('sum-' + filterId + '-latas');
     if (countEl) countEl.textContent = shown;
     if (kgEl)   kgEl.textContent = kgSum.toLocaleString('es-PE',{{minimumFractionDigits:2}}) + ' kg';
-    if (lataEl) lataEl.textContent = lataSum.toLocaleString('es-PE') + ' latas';
+    if (lataEl) lataEl.textContent = Math.round(lataSum).toLocaleString('es-PE') + ' latas';
   }});
 }}
 
@@ -2116,8 +2147,69 @@ function handlePdfUpload(evt) {{ if (evt.target.files[0]) simulatePdfParse('jmq'
 
 function commitParsedPdf() {{
   if (!pdfData) return;
-  alert(`🎉 Documento "${{pdfData.num}}" incorporado a facoimpec.db\\n• Entidad: ${{pdfData.mun}}`);
+  
+  // Agregar a Cereal si contiene cereal
+  if (pdfData.cereal && !pdfData.cereal.includes('0 kg')) {{
+    const tbody = document.getElementById('tbody-cereal');
+    if (tbody) {{
+      const tr = document.createElement('tr');
+      tr.className = 'trow hover:bg-indigo-50 transition bg-indigo-50/70 border-l-4 border-indigo-500';
+      tr.setAttribute('data-mes', 'Octubre');
+      tr.setAttribute('data-mun', pdfData.mun.toLowerCase());
+      tr.innerHTML = `
+        <td class="px-3 py-2 font-bold text-indigo-900 text-xs">${{pdfData.mun}} <span class="text-[9px] bg-indigo-200 text-indigo-800 px-1.5 py-0.5 rounded font-bold uppercase ml-1">PDF</span></td>
+        <td class="px-3 py-2 text-xs text-gray-700 font-semibold">Octubre</td>
+        <td class="px-3 py-2 text-xs font-mono text-gray-700">30/10/2026</td>
+        <td class="px-2 py-1"><input type="date" value="2026-10-25" onchange="markDateSaved(this)" class="text-[10px] border border-gray-300 rounded p-1 w-24 bg-white text-blue-700 font-mono"></td>
+        <td class="px-2 py-1"><input type="date" value="2026-10-27" onchange="markDateSaved(this)" class="text-[10px] border border-gray-300 rounded p-1 w-24 bg-white text-amber-700 font-mono"></td>
+        <td class="px-2 py-1"><input type="date" value="2026-10-29" onchange="markDateSaved(this)" class="text-[10px] border border-gray-300 rounded p-1 w-24 bg-white text-purple-700 font-mono"></td>
+        <td class="px-3 py-2 text-xs font-mono text-right font-bold">1,000</td>
+        <td class="px-3 py-2 text-xs font-mono text-right">1.00</td>
+        <td class="px-3 py-2 text-xs font-mono text-right font-black text-indigo-700">${{pdfData.cereal.split(' ')[0]}}</td>
+        <td class="px-3 py-2 text-xs font-mono text-right">50</td>
+        <td class="px-3 py-2 text-xs font-mono text-right">20</td>
+      `;
+      tbody.insertBefore(tr, tbody.firstChild);
+    }}
+  }}
+
+  // Agregar a Leche si contiene leche
+  if (pdfData.leche && !pdfData.leche.includes('0 latas')) {{
+    const tbodyLeche = document.getElementById('tbody-leche');
+    if (tbodyLeche) {{
+      const tr = document.createElement('tr');
+      tr.className = 'trow hover:bg-indigo-50 transition bg-indigo-50/70 border-l-4 border-indigo-500';
+      tr.setAttribute('data-mes', 'Octubre');
+      tr.setAttribute('data-mun', pdfData.mun.toLowerCase());
+      tr.innerHTML = `
+        <td class="px-3 py-2 font-bold text-indigo-900 text-xs">${{pdfData.mun}} <span class="text-[9px] bg-indigo-200 text-indigo-800 px-1.5 py-0.5 rounded font-bold uppercase ml-1">PDF</span></td>
+        <td class="px-3 py-2 text-xs text-gray-700 font-semibold">Octubre</td>
+        <td class="px-3 py-2 text-xs font-mono text-gray-700">30/10/2026</td>
+        <td class="px-3 py-2 text-xs font-mono text-right font-black text-blue-700">${{pdfData.leche.split(' ')[0]}}</td>
+        <td class="px-3 py-2 text-xs font-mono text-right font-semibold">${{(parseInt(pdfData.leche.replace(/[^0-9]/g,'')||0)/48).toFixed(1)}}</td>
+        <td class="px-3 py-2 text-xs font-mono text-right">-</td>
+      `;
+      tbodyLeche.insertBefore(tr, tbodyLeche.firstChild);
+    }}
+  }}
+
+  // Registrar en Kardex como compromiso de contrato
+  liveKardex.unshift({{
+    fecha: new Date().toLocaleDateString('es-PE'),
+    producto: 'Contrato / O.C. Importada (' + pdfData.mun + ')',
+    codigo: 'DOC-PDF',
+    lote: pdfData.num,
+    cantidad: 1,
+    um: 'Doc',
+    proveedor: pdfData.mun,
+    notas: 'Importado de archivo: ' + pdfData.cereal + ' + ' + pdfData.leche
+  }});
+  renderKardex();
+
+  applyTableFilters('cereal');
+  applyTableFilters('leche');
   closePdfModal();
+  alert(`✅ ¡DOCUMENTO PROCESADO CON ÉXITO!\\n\\n• Entidad: ${{pdfData.mun}}\\n• N° Documento: ${{pdfData.num}}\\n• Cereal y Leche cargados en los cronogramas.`);
 }}
 
 // ── REQUERIMIENTOS HITL ─────────────────────────────────────
@@ -2180,27 +2272,217 @@ function waSend() {{
 }}
 
 function waProcessNL(msg) {{
-  const lm = msg.toLowerCase();
-  if (lm.includes('llegaron') || lm.includes('llegó') || lm.includes('camión') || lm.includes('lote')) {{
-    waAppend(`<strong>📥 Entrada detectada</strong><br>He captado una llegada de materia prima. ¿Confirmas el registro en el Kardex?`, 'bot');
-    waHitlPrompt(msg);
-  }} else if (lm.includes('entregado') || lm.includes('acta') || lm.includes('confirmad')) {{
-    waAppend(`<strong>✅ Entrega detectada</strong><br>Registraré la conformidad. ¿El N° de Acta es correcto?`, 'bot');
-    waHitlPrompt(msg);
-  }} else if (lm.includes('envasado') || lm.includes('bolsas') || lm.includes('terminad')) {{
-    waAppend(`<strong>📦 Envasado registrado</strong><br>Lote marcado como "Listo para Despacho". ¿Confirmas?`, 'bot');
-    waHitlPrompt(msg);
-  }} else if (lm.includes('pendiente') || lm.includes('mañana') || lm.includes('sale')) {{
-    waAppend(`<strong>📋 Pendiente anotado</strong><br>Lo agregué a la lista de pendientes. ¿Hay una fecha límite?`, 'bot');
+  const lm = msg.toLowerCase().trim();
+
+  // 1. Consulta específica de Leche (Demanda / Órdenes del mes / Déficit)
+  if (lm.includes('leche') && (lm.includes('orden') || lm.includes('mes') || lm.includes('cubrir') || lm.includes('falta') || lm.includes('necesita') || lm.includes('demanda') || lm.includes('balance'))) {{
+    waAppend(`🥛 <strong>Balance y Demanda de Leche:</strong><br><br>
+      • <strong>Demanda pendiente total:</strong> 151,506 latas (3,156 cajas ×48).<br>
+      • <strong>Stock físico en almacén:</strong> 123,680 latas (2,577 cajas).<br>
+      • ⚠️ <strong>DÉFICIT POR COMPRAR:</strong> <span style="color:#dc2626;font-weight:bold;">27,826 latas (579 cajas)</span>.<br><br>
+      <em>Recomendación de compras: Programar O.C. urgente a Gloria para cubrir los despachos de este mes.</em>`, 'bot');
+    return;
+  }}
+
+  // 2. Consulta de Stock Crítico / Materias Primas / Insumos
+  if (lm.includes('stock') || lm.includes('crítico') || lm.includes('critico') || lm.includes('insumo') || lm.includes('materia prima') || lm.includes('almacen')) {{
+    waAppend(`📦 <strong>Reporte de Stock Crítico en Almacén:</strong><br><br>
+      🚨 <span style="color:#dc2626;font-weight:bold;">Déficit de Trigo en Grano:</span> -16,532 kg (Pedir 16 TN).<br>
+      🚨 <span style="color:#dc2626;font-weight:bold;">Déficit de Avena Perlada:</span> -33,158 kg (Pedir 33 TN).<br>
+      🚨 <span style="color:#dc2626;font-weight:bold;">Déficit Leche Gloria:</span> -27,826 latas (579 cajas).<br>
+      ⚠️ <span style="color:#d97706;font-weight:bold;">Alerta Quinua:</span> -318 kg (ajustar con lote entrante).<br>
+      ✅ Azúcar y Maca: Stock con cobertura normal.`, 'bot');
+    return;
+  }}
+
+  // 3. Consulta de Total Cereal por Mes (ej: Octubre, Setiembre, etc.)
+  const mesesKeywords = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','setiembre','septiembre','octubre','noviembre','diciembre'];
+  const mesEncontrado = mesesKeywords.find(m => lm.includes(m));
+  if (mesEncontrado && (lm.includes('cereal') || lm.includes('total') || lm.includes('cuanto') || lm.includes('cuánto') || lm.includes('orden') || lm.includes('kilos') || lm.includes('tonelad'))) {{
+    const mesNorm = mesEncontrado === 'septiembre' ? 'setiembre' : mesEncontrado;
+    let sumKg = 0;
+    let countRows = 0;
+    document.querySelectorAll('#tbody-cereal tr.trow').forEach(r => {{
+      const rMes = (r.getAttribute('data-mes') || '').toLowerCase();
+      if (rMes.includes(mesNorm)) {{
+        countRows++;
+        const kgCell = r.querySelector('td:nth-child(9)');
+        if (kgCell) sumKg += parseFloat(kgCell.textContent.replace(/[^0-9.]/g,'')) || 0;
+      }}
+    }});
+    const nombreMesFmt = mesNorm.charAt(0).toUpperCase() + mesNorm.slice(1);
+    waAppend(`🥣 <strong>Programación Cereal — ${{nombreMesFmt}}:</strong><br><br>
+      • <strong>Total programado:</strong> <span style="color:#dc2626;font-weight:bold;">${{sumKg.toLocaleString('es-PE',{{minimumFractionDigits:2}})}} kg</span> (${{(sumKg/1000).toFixed(2)}} TN).<br>
+      • <strong>Órdenes / entregas:</strong> ${{countRows}} distritos.<br>
+      <em>Puedes ver el desglose por municipalidad filtrando la pestaña Cereal por "${{nombreMesFmt}}".</em>`, 'bot');
+    return;
+  }}
+
+  // 4. Consulta de Carga / Orden por Municipalidad (ej: Llama, Huamachuco, Encañada, San Miguel, etc.)
+  let matchedMun = '';
+  const rowsCereal = document.querySelectorAll('#tbody-cereal tr.trow');
+  for (const r of rowsCereal) {{
+    const munName = (r.children[0] ? r.children[0].textContent.trim() : '');
+    const cleanMun = munName.toLowerCase().replace(/muni\w*\.?\s*/g, '').trim();
+    if (cleanMun && cleanMun.length >= 3 && lm.includes(cleanMun)) {{
+      matchedMun = munName;
+      break;
+    }}
+  }}
+
+  if (matchedMun) {{
+    let ordersCereal = [];
+    let ordersLeche = [];
+    document.querySelectorAll('#tbody-cereal tr.trow').forEach(r => {{
+      const munName = (r.children[0] ? r.children[0].textContent.trim() : '');
+      if (munName.toLowerCase().includes(matchedMun.toLowerCase())) {{
+        ordersCereal.push({{
+          mes: r.children[1] ? r.children[1].textContent.trim() : '',
+          fecha: r.children[2] ? r.children[2].textContent.trim() : '',
+          bolsas: r.children[6] ? r.children[6].textContent.trim() : '',
+          kg: r.children[8] ? r.children[8].textContent.trim() : '',
+          sacos: r.children[10] ? r.children[10].textContent.trim() : ''
+        }});
+      }}
+    }});
+    document.querySelectorAll('#tbody-leche tr.trow').forEach(r => {{
+      const munName = (r.children[0] ? r.children[0].textContent.trim() : '');
+      if (munName.toLowerCase().includes(matchedMun.toLowerCase())) {{
+        ordersLeche.push({{
+          mes: r.children[1] ? r.children[1].textContent.trim() : '',
+          fecha: r.children[2] ? r.children[2].textContent.trim() : '',
+          latas: r.children[3] ? r.children[3].textContent.trim() : '',
+          cajas: r.children[4] ? r.children[4].textContent.trim() : ''
+        }});
+      }}
+    }});
+
+    let htmlReply = `📍 <strong>Carga Programada para ${{matchedMun}}:</strong><br><br>`;
+    if (ordersCereal.length > 0) {{
+      htmlReply += `🥣 <strong>CEREAL:</strong><br>`;
+      ordersCereal.slice(0, 3).forEach(o => {{
+        htmlReply += `• Mes: <strong>${{o.mes}}</strong> | Plazo: ${{o.fecha}}<br>&nbsp;&nbsp;→ <strong>${{o.kg}} kg</strong> (${{o.bolsas}} bolsas / ${{o.sacos}} sacos)<br>`;
+      }});
+      if (ordersCereal.length > 3) htmlReply += `<em>(+${{ordersCereal.length - 3}} entregas adicionales en sistema)</em><br>`;
+    }}
+    if (ordersLeche.length > 0) {{
+      htmlReply += `<br>🥛 <strong>LECHE:</strong><br>`;
+      ordersLeche.slice(0, 3).forEach(o => {{
+        htmlReply += `• Mes: <strong>${{o.mes}}</strong> | Plazo: ${{o.fecha}}<br>&nbsp;&nbsp;→ <strong>${{o.latas}} latas</strong> (${{o.cajas}} cajas ×48)<br>`;
+      }});
+    }}
+    if (ordersCereal.length === 0 && ordersLeche.length === 0) {{
+      htmlReply += `<em>No se encontraron órdenes pendientes activas para este destino.</em>`;
+    }}
+    waAppend(htmlReply, 'bot');
+    return;
+  }}
+
+  // 5. Flujos de programación de despachos / cargas (ej: "Lunes carga La encañada", "Alistar la banda, tarapoto, nueva Cajamarca", "Lunes sale")
+  if (lm.includes('alistar') || lm.includes('carga') || lm.includes('cargan') || lm.includes('sale') || lm.includes('salen') || lm.includes('despacho') || lm.includes('despachar')) {{
+    // Buscar municipalidades mencionadas en el texto
+    let distritosMencionados = [];
+    const allRows = document.querySelectorAll('#tbody-cereal tr.trow');
+    const seenMun = new Set();
+    allRows.forEach(r => {{
+      const munName = (r.children[0] ? r.children[0].textContent.trim() : '');
+      const clean = munName.toLowerCase().replace(/muni\w*\.?\s*/g, '').trim();
+      if (clean && clean.length >= 3 && lm.includes(clean) && !seenMun.has(clean)) {{
+        seenMun.add(clean);
+        distritosMencionados.push(munName);
+      }}
+    }});
+
+    // Detectar día programado (Lunes, Martes, etc.)
+    let diaDetectado = 'Próximo turno';
+    if (lm.includes('lunes')) diaDetectado = 'Lunes';
+    else if (lm.includes('martes')) diaDetectado = 'Martes';
+    else if (lm.includes('miercoles') || lm.includes('miércoles')) diaDetectado = 'Miércoles';
+    else if (lm.includes('jueves')) diaDetectado = 'Jueves';
+    else if (lm.includes('viernes')) diaDetectado = 'Viernes';
+    else if (lm.includes('sabado') || lm.includes('sábado')) diaDetectado = 'Sábado';
+    else if (lm.includes('hoy')) diaDetectado = 'Hoy';
+    else if (lm.includes('mañana')) diaDetectado = 'Mañana';
+
+    let respuestaDespacho = `🚚 <strong>Programación de Despacho / Carga Detectada</strong><br><br>`;
+    respuestaDespacho += `📅 <strong>Día de salida:</strong> <span style="color:#d97706;font-weight:bold;">${{diaDetectado}}</span><br>`;
+    if (distritosMencionados.length > 0) {{
+      respuestaDespacho += `📍 <strong>Destinos identificados:</strong><br>`;
+      distritosMencionados.forEach(d => {{
+        respuestaDespacho += `• <strong>${{d}}</strong> (Marcar fecha de despacho en el cronograma)<br>`;
+      }});
+    }} else {{
+      respuestaDespacho += `📝 <strong>Instrucción recibida:</strong> "${{msg}}"<br>`;
+    }}
+    respuestaDespacho += `<br>¿Deseas confirmar y actualizar las fechas de despacho en el cronograma?`;
+
+    waAppend(respuestaDespacho, 'bot');
+    waHitlPrompt(msg, distritosMencionados.join(', '), 0, 'despacho');
+    return;
+  }}
+
+  // 6. Flujos de actualización rápida de stock y operaciones (ej: "Hoy llegaron 10 toneladas de azucar", "Llegaron 100 cajas de leche")
+  if (lm.includes('llegaron') || lm.includes('llegó') || lm.includes('llego') || lm.includes('ingreso') || lm.includes('ingresó') || lm.includes('ingresaron') || lm.includes('descargo') || lm.includes('descargaron')) {{
+    // Detectar material
+    let matTarget = '';
+    let isLecheCajas = false;
+    if (lm.includes('azucar') || lm.includes('azúcar')) matTarget = 'Azúcar Rubia';
+    else if (lm.includes('trigo')) matTarget = 'Trigo en Grano';
+    else if (lm.includes('avena')) matTarget = 'Avena Perlada';
+    else if (lm.includes('quinua')) matTarget = 'Quinua Perlada';
+    else if (lm.includes('maca')) matTarget = 'Maca Gelatinizada';
+    else if (lm.includes('soya')) matTarget = 'Soya Desgrasada';
+    else if (lm.includes('leche')) {{
+      matTarget = 'Leche Evaporada (latas)';
+      if (lm.includes('caja')) isLecheCajas = true;
+    }}
+
+    // Detectar cantidad numérica
+    const numMatch = lm.match(/(\d+(?:[.,]\d+)?)/);
+    let cantidad = numMatch ? parseFloat(numMatch[1].replace(',', '.')) : 0;
+    let cantFinal = cantidad;
+    let umText = 'kg';
+
+    if (lm.includes('tonelada') || lm.includes(' tn') || lm.includes(' tn.') || lm.includes('tn')) {{
+      cantFinal = cantidad * 1000;
+      umText = 'kg (de ' + cantidad + ' TN)';
+    }} else if (isLecheCajas) {{
+      cantFinal = cantidad * 48; // 1 caja = 48 latas
+      umText = 'latas (de ' + cantidad + ' cajas ×48)';
+    }} else if (matTarget.includes('latas')) {{
+      umText = 'latas';
+    }}
+
+    let detailStr = matTarget ? `<strong>${{matTarget}}</strong>: +${{cantFinal.toLocaleString('es-PE')}} ${{umText}}` : msg;
+
+    waAppend(`📥 <strong>Recepción de Mercadería Detectada</strong><br><br>
+      He interpretado el ingreso:<br>
+      • ${{detailStr}}<br><br>
+      ¿Deseas confirmar el ingreso a Almacén y registrarlo en el Kardex?`, 'bot');
+    waHitlPrompt(msg, matTarget, cantFinal, 'ingreso');
+    return;
+  }}
+
+  if (lm.includes('entregado') || lm.includes('acta') || lm.includes('conformidad')) {{
+    waAppend(`<strong>✅ Conformidad de Entrega detectada</strong><br>Registraré la conformidad en la orden. ¿El N° de Acta es correcto?`, 'bot');
+    waHitlPrompt(msg, '', 0, 'entrega');
+    return;
+  }} else if (lm.includes('envasado') || lm.includes('terminad')) {{
+    waAppend(`<strong>📦 Envasado registrado</strong><br>Lote actualizado como "Listo para Despacho". ¿Confirmas?`, 'bot');
+    waHitlPrompt(msg, '', 0, 'envasado');
+    return;
   }} else {{
-    waAppend(`Entendido. Puedo registrar llegadas, entregas, envasados y pendientes.<br><em style="font-size:11px;opacity:.7">Escribe con más detalle o usa los botones rápidos abajo.</em>`, 'bot');
+    waAppend(`Entendido. Puedes consultarme por órdenes (ej: <em>"¿cuánto cargar para Llama?"</em>), actualizar llegadas (ej: <em>"Hoy llegaron 10 toneladas de azúcar"</em>), o programar cargas de planta (ej: <em>"Lunes carga La encañada"</em>).`, 'bot');
   }}
 }}
 
-function waHitlPrompt(original) {{
+function waHitlPrompt(original, matTarget, cant, actionType) {{
   const div = document.createElement('div');
   div.className = 'hitl-strip';
   div.style.margin = '8px 0';
+  div.setAttribute('data-mat', matTarget || '');
+  div.setAttribute('data-cant', cant || 0);
+  div.setAttribute('data-action', actionType || 'ingreso');
   div.innerHTML = `
     <div style="font-size:11px;font-weight:700;color:#92400e;margin-bottom:4px;">🔐 Confirma antes de guardar:</div>
     <div style="font-size:11px;color:#78350f;margin-bottom:6px;">"${{original}}"</div>
@@ -2216,11 +2498,84 @@ function waHitlPrompt(original) {{
 function waConfirm(btn) {{
   const strip = btn.closest('.hitl-strip');
   const orig = strip.querySelector('div:nth-child(2)').textContent;
-  strip.innerHTML = '<div style="color:#16a34a;font-weight:700;font-size:11px;">✅ Guardado en facoimpec.db</div>';
+  const mat = strip.getAttribute('data-mat');
+  const cant = parseFloat(strip.getAttribute('data-cant')) || 0;
+  const action = strip.getAttribute('data-action');
+
+  let updateMsg = '✅ Guardado en el sistema FACOIMPEC';
+
+  // Si fue un ingreso de stock reconocido, actualizamos la tabla de Almacén en vivo
+  if (mat && cant > 0) {{
+    const rows = document.querySelectorAll('#pane-almacen tbody tr');
+    for (const row of rows) {{
+      const name = row.querySelector('td')?.textContent?.trim();
+      if (name === mat) {{
+        const stockCell = row.querySelectorAll('td')[1];
+        const dispCell  = row.querySelectorAll('td')[3];
+        const estadoCell = row.querySelectorAll('td')[5];
+        if (stockCell) {{
+          const currentRaw = stockCell.textContent.replace(/[^0-9.]/g, '');
+          let current = parseFloat(currentRaw) || 0;
+          current += cant;
+          stockCell.textContent = Math.round(current).toLocaleString('es-PE') + (mat.includes('latas') ? '' : ' kg');
+          stockCell.style.backgroundColor = '#ecfdf5';
+          stockCell.style.fontWeight = 'bold';
+
+          // Actualizar disponible
+          if (dispCell) {{
+            const compRaw = row.querySelectorAll('td')[2].textContent.replace(/[^0-9.]/g, '');
+            const comp = parseFloat(compRaw) || 0;
+            const disp = current - comp;
+            dispCell.textContent = Math.round(disp).toLocaleString('es-PE') + (mat.includes('latas') ? '' : ' kg');
+            dispCell.style.color = disp >= 0 ? '#16a34a' : '#dc2626';
+            if (disp >= 0 && estadoCell) {{
+              estadoCell.innerHTML = '<span class="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-bold border border-green-200">OK</span>';
+            }}
+          }}
+        }}
+        break;
+      }}
+    }}
+    updateMsg += `<br>📦 <strong>Stock de ${{mat}} actualizado en Almacén (+${{cant.toLocaleString('es-PE')}})</strong>`;
+  }}
+
+  // Si fue una instrucción de despacho/carga, actualizamos las fechas de despacho en la tabla Cereal
+  if (action === 'despacho' && mat) {{
+    const dests = mat.split(',').map(s => s.trim().toLowerCase());
+    const todayStr = new Date().toISOString().split('T')[0];
+    let updatedCount = 0;
+    document.querySelectorAll('#tbody-cereal tr.trow').forEach(row => {{
+      const mun = (row.children[0] ? row.children[0].textContent.toLowerCase() : '');
+      if (dests.some(d => mun.includes(d))) {{
+        const inputDespacho = row.querySelectorAll('input[type="date"]')[2];
+        if (inputDespacho) {{
+          inputDespacho.value = todayStr;
+          inputDespacho.style.backgroundColor = '#f3e8ff';
+          inputDespacho.style.borderColor = '#9333ea';
+          updatedCount++;
+        }}
+      }}
+    }});
+    updateMsg += `<br>🚚 <strong>Fecha de despacho actualizada para: ${{mat}} (${{updatedCount}} entregas programadas)</strong>`;
+  }}
+
+  strip.innerHTML = `<div style="color:#16a34a;font-weight:700;font-size:11px;">${{updateMsg}}</div>`;
   strip.style.background = '#f0fdf4'; strip.style.borderColor = '#86efac';
-  // Also add to kardex
-  const kNew = {{fecha: new Date().toLocaleDateString('es-PE'), producto:'Registrado vía WA', codigo:'WA', lote:'', cantidad:0, um:'Kg', proveedor:'', notas: orig.replace(/['"]/g,'')}};
-  liveKardex.push(kNew);
+
+  // Registrar en Kardex
+  const prodName = mat || 'Recepción vía WhatsApp';
+  const kNew = {{
+    fecha: new Date().toLocaleDateString('es-PE'),
+    producto: prodName,
+    codigo: 'WA-STOCK',
+    lote: 'LOTE-HOY',
+    cantidad: cant || 0,
+    um: prodName.includes('latas') ? 'Latas' : 'Kg',
+    proveedor: 'Ingreso directo WhatsApp',
+    notas: orig.replace(/['"]/g,'')
+  }};
+  liveKardex.unshift(kNew);
+  renderKardex();
 }}
 function waEdit(btn) {{
   const txt = btn.closest('.hitl-strip').querySelector('div:nth-child(2)').textContent.replace(/['"]/g,'');
@@ -2229,15 +2584,15 @@ function waEdit(btn) {{
 }}
 function waCancel(btn) {{
   btn.closest('.hitl-strip').remove();
-  waAppend('Cancelado. No se guardó ningún registro.', 'bot');
+  waAppend('Operación cancelada.', 'bot');
 }}
 
 function waQuickAction(type) {{
   const msgs = {{
-    'camion':  'Llegaron 30 TN de Trigo Indurlac lote TG-26',
-    'envasado':'Terminadas las 3,490 bolsas de Huamachuco',
-    'despacho':'Salió camión T3K-881 con las 21 TN de Encañada',
-    'entrega': 'Entregado a Cochan, acta N° 047, firma OK'
+    'llama':        '¿Cuánto se tiene que cargar para Llama?',
+    'leche_mes':    '¿Cuánto se necesita para cubrir las órdenes de leche de este mes?',
+    'octubre':      '¿Cuánto cereal tenemos programado para Octubre?',
+    'stock_critico':'¿Cuál es el stock crítico de almacén hoy?'
   }};
   document.getElementById('wa-input').value = msgs[type] || '';
   waSend();
@@ -2245,12 +2600,11 @@ function waQuickAction(type) {{
 
 // ── VOICE SIMULATION ────────────────────────────────────────
 const VOICE_SAMPLES = [
-  'Llegaron 36 TN de avena lote 30 al almacén',
-  'Mañana sale San Luis, EMHA, San Jose',
-  'Terminado envasado 1,049 bolsas Chimban',
-  'Pendiente Cochabamba 3 entregas más adicional',
-  'Entregado Florencia de Mora, acta N° 081',
-  'Llegaron 22 TN de azúcar lote AZ-22',
+  '¿Cuánto se tiene que cargar para Llama?',
+  '¿Cuánto se necesita para cubrir las órdenes de leche de este mes?',
+  '¿Cuánto cereal tenemos programado para Octubre?',
+  '¿Cuál es el stock crítico de almacén?',
+  '¿Qué órdenes de compra están pendientes para Huamachuco?'
 ];
 
 let voiceTimer = null;
@@ -2329,7 +2683,7 @@ function submitSalida() {{
   liveKardex.push(entry);
   renderKardex();
   closeModal('modalSalida');
-  alert('✅ Salida registrada en el Kardex\nDestino: ' + dest);
+  alert('✅ Salida registrada en el Kardex\\nDestino: ' + dest);
 }}
 
 function openModalStock() {{
@@ -2360,7 +2714,7 @@ function submitStock() {{
     }}
   }}
   closeModal('modalStock');
-  alert('✅ Stock de ' + mat + ' actualizado\nMotivo: ' + motivo);
+  alert('✅ Stock de ' + mat + ' actualizado\\nMotivo: ' + motivo);
 }}
 
 // ── INIT ────────────────────────────────────────────────────
@@ -2376,14 +2730,26 @@ document.addEventListener('DOMContentLoaded', () => {{
       if (id === 'cereal') {{
         let kg = 0;
         rows.forEach(r => {{
-          const c = r.querySelector('td:nth-child(6)');
+          const c = r.querySelector('td:nth-child(9)');
           if (c) kg += parseFloat(c.textContent.replace(/[^0-9.]/g,'')) || 0;
         }});
         const el = document.getElementById('sum-cereal-kg');
         if (el) el.textContent = kg.toLocaleString('es-PE',{{minimumFractionDigits:2}}) + ' kg';
       }}
+      // Sum latas for leche
+      if (id === 'leche') {{
+        let latas = 0;
+        rows.forEach(r => {{
+          const c = r.querySelector('td:nth-child(4)');
+          if (c) latas += parseFloat(c.textContent.replace(/[^0-9.]/g,'')) || 0;
+        }});
+        const el = document.getElementById('sum-leche-latas');
+        if (el) el.textContent = Math.round(latas).toLocaleString('es-PE') + ' latas';
+      }}
     }}
   }});
+  applyTableFilters('cereal');
+  applyTableFilters('leche');
   calcProduccion();
   runRetencionCalc();
   renderNotes();
